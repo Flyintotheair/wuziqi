@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <!--注册-->
+    <TextView
+        android:id="@+id/RegisterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="40sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="10.0"
+        android:shadowDy="8.0"
+        android:shadowRadius="10.0"
+        android:text="注 册   Welcome"
+        android:textColor="#CCFFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+
+    <!--这个是确认注册按钮-->
+    <EditText
+        android:id="@+id/re_et_1"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:hint="用户名(字符不超过10个)"
+        android:maxLength="10"
+        android:maxLines="2"
+        android:padding="18dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!--密码-->
+    <EditText
+        android:id="@+id/re_et_2"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:hint="密码(数字不超过10个)"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:inputType="numberPassword"
+        android:maxLines="2"
+        android:padding="18dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!--确认密码-->
+    <EditText
+        android:id="@+id/re_et_3"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:hint="确认密码(数字不超过10个)"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:inputType="numberPassword"
+        android:maxLines="2"
+        android:padding="18dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!--确认密码-->
+
+
+    <Button
+        android:id="@+id/btn_ackRegister"
+        android:layout_width="150sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:background="#03A9F4"
+        android:padding="16dp"
+        android:text="确认"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+
+    <!--图片-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="12sp"
+        />
+
+</LinearLayout>

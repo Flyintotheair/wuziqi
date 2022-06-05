@@ -6,5 +6,6 @@
 
     <dimen name="boardWidth">1px</dimen>
     <dimen name="anchorWidth">5px</dimen>
-    
+    <dimen name="fab_margin">16dp</dimen>
+
 </resources>

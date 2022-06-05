@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+    <!--问渠两个字-->
+    <TextView
+        android:id="@+id/tv_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="10.0"
+        android:shadowDy="8.0"
+        android:shadowRadius="10.0"
+        android:text="五子棋"
+        android:textColor="#FF0055FF"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <!--用户名-->
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="300sp"
+        android:layout_height="54sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="55sp"
+
+        android:hint="用户名："
+        android:inputType="phone"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!--密码-->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="300sp"
+        android:layout_height="54sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:hint="密 码："
+        android:maxLength="10"
+        android:singleLine="true"
+        android:padding="18dp"
+        android:inputType="numberPassword"/>
+
+    <!--这个是登录 和 忘记密码 那一排-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_gravity="center">
+
+        <!--这个是注册按钮-->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="16sp"
+
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:autoLink="all"
+
+            />
+
+        <!--这个是忘记密码按钮-->
+        <Button
+            android:id="@+id/btn_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100sp"
+            android:text="忘记密码"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!--这个是登录按钮-->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="47sp"
+        android:background="#03A9F4"
+        android:padding="16dp"
+        android:text="登录"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+
+
+
+</LinearLayout>
