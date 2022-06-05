@@ -40,8 +40,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         android:descendantFocusability="beforeDescendants"/>
-/
-    <!--密码-->
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="300sp"
@@ -57,7 +56,8 @@
         android:singleLine="true"
         android:padding="18dp"
         android:inputType="numberPassword"
-        android:descendantFocusability="beforeDescendants"/>
+
+        />
 
     <!--这个是登录 和 忘记密码 那一排-->
     <LinearLayout
@@ -80,7 +80,6 @@
 
             />
 
-
     </LinearLayout>
 
     <!--这个是登录按钮-->
@@ -95,8 +94,4 @@
         android:text="登录"
         android:gravity="center"
         android:textSize="20sp"/>
-
-
-
-
 </LinearLayout>

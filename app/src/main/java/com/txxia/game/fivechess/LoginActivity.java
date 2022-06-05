@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class LoginActivity extends AppCompatActivity {
 
     EditText mEtPhone,mEtPassword;
-    Button mBtnLogin,mBtnRegister,mBtnForget;
+    Button mBtnLogin,mBtnRegister;
     Thread t;
     DBUtils dbUtils;
     ResultSet rs;
@@ -99,8 +99,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
     }
 }
