@@ -7,11 +7,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true">
-        
+
+        <Button
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="个人信息"
+            android:background="@drawable/btn_bg" />
+
         <Button
             android:id="@+id/new_game"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:text="@string/new_game"
             android:background="@drawable/btn_bg" />
     
@@ -29,7 +37,15 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:text="@string/fight_connection"
-            android:background="@drawable/btn_bg" /> 
+            android:background="@drawable/btn_bg" />
+
+        <Button
+            android:id="@+id/rank"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:text="排名"
+            android:background="@drawable/btn_bg" />
 
     </LinearLayout>
 </RelativeLayout>
