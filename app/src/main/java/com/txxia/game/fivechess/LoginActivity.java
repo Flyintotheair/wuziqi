@@ -23,11 +23,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         mEtPhone = findViewById(R.id.etPhone);
         mEtPassword = findViewById(R.id.etPassword);
         mBtnLogin = findViewById(R.id.btn_login);
         mBtnRegister = findViewById(R.id.btn_register);
-        mBtnForget = findViewById(R.id.btn_forget);
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,10 +65,10 @@ public class LoginActivity extends AppCompatActivity {
                                         if (rs.getString("password").equals(mEtPassword.getText().toString())) isOK[0] = true;
                                         if (isOK[0]) {
                                             SaveSharedPreference saveSharedPreference = new SaveSharedPreference();
-                                            saveSharedPreference.setUsername(rs.getString("User_name"));
-                                            saveSharedPreference.setUserId(rs.getInt("User_id"));
-                                            saveSharedPreference.setPassword(rs.getString("U_password"));
-                                            saveSharedPreference.setPhone(rs.getString("User_phone"));
+                                            saveSharedPreference.setUsername(rs.getString("username"));
+                                            saveSharedPreference.setUserId(rs.getInt("id"));
+                                            saveSharedPreference.setPassword(rs.getString("password"));
+                                            saveSharedPreference.setGrade(rs.getInt("grade"));
 
                                         }
                                     }

@@ -10,9 +10,9 @@ public class DBUtils {
     //要连接的数据库url,注意：此处连接的应该是服务器上的MySQl的地址
     private final static String url = "jdbc:mysql://180.76.227.152:3306/wuziqi";
     //连接数据库使用的用户名
-    private final static String userName = "root";
+    private final static String userName = "zzuwenqu";
     //连接的数据库时使用的密码
-    private final static String password = "123456";
+    private final static String password = "zzu123456!";
     public Connection connection=null;
     PreparedStatement ps=null;
     ResultSet rs=null;

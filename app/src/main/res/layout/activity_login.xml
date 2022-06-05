@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <!--问渠两个字-->
     <TextView
@@ -29,17 +29,18 @@
         android:id="@+id/etPhone"
         android:layout_width="300sp"
         android:layout_height="54sp"
+        android:editable="true"
         android:layout_gravity="center"
         android:layout_marginTop="55sp"
-
         android:hint="用户名："
-        android:inputType="phone"
+        android:background="@drawable/background_text"
         android:maxLength="15"
         android:singleLine="true"
         android:padding="15dp"
         android:textColor="@color/black"
-        android:textSize="16sp" />
-
+        android:textSize="16sp"
+        android:descendantFocusability="beforeDescendants"/>
+/
     <!--密码-->
     <EditText
         android:id="@+id/etPassword"
@@ -47,13 +48,16 @@
         android:layout_height="54sp"
         android:layout_gravity="center"
         android:layout_marginTop="10sp"
+        android:background="@drawable/background_text"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:hint="密 码："
+        android:editable="true"
         android:maxLength="10"
         android:singleLine="true"
         android:padding="18dp"
-        android:inputType="numberPassword"/>
+        android:inputType="numberPassword"
+        android:descendantFocusability="beforeDescendants"/>
 
     <!--这个是登录 和 忘记密码 那一排-->
     <LinearLayout
@@ -76,16 +80,6 @@
 
             />
 
-        <!--这个是忘记密码按钮-->
-        <Button
-            android:id="@+id/btn_forget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100sp"
-            android:text="忘记密码"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center" />
 
     </LinearLayout>
 
