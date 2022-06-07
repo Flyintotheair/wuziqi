@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (mEtPhone.getText().toString().length() > 15 || mEtPassword.getText().toString().length() > 10) {
                     com.txxia.game.fivechess.ToastUtil.showMsg(LoginActivity.this, "手机号或者密码格式不对");
                 }else {
-                    String sqlfinduser = "select * from user where User_phone = '" + mEtPhone.getText().toString() + "';";
+                    String sqlfinduser = "select * from user where username = '" + mEtPhone.getText().toString() + "';";
                     Intent intent = null;
                     final Boolean[] isOK = {false};
                     try {
