@@ -15,9 +15,19 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button user = (Button) findViewById(R.id.user);
         Button newGame = (Button) findViewById(R.id.new_game);
         Button fight = (Button) findViewById(R.id.fight);
         Button netFight = (Button) findViewById(R.id.conn_fight);
+        Button rank = (Button) findViewById(R.id.rank);
+
+        user.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserActivity.class));
+            }
+        });
+
         newGame.setOnClickListener(new OnClickListener() {
             
             @Override
@@ -40,6 +50,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ConnectionActivity.class));
+            }
+        });
+
+        rank.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, rankActivity.class));
             }
         });
     }
