@@ -17,12 +17,13 @@ public class rankActivity extends Activity {
     private Thread t;
     private DBUtils dbUtils;
     private ResultSet rs;
-    String mygrade;
     String[] worldgrade = new String[15];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
+        myrank = findViewById(R.id.myrank);
+        myrank.setText("我的分数：" + new SaveSharedPreference().getGrade());
         String sql = "select * from user order by grade desc";
         try {
             t = new Thread(new Runnable() {
@@ -34,7 +35,7 @@ public class rankActivity extends Activity {
                         if (rs.isBeforeFirst()) {
                             int i = 0;
                             while (rs.next()) {
-                                worldgrade[i] = i + "       " + rs.getString("username") + ":" + rs.getString("grade");
+                                worldgrade[i] = (i + 1) + "       " + rs.getString("username") + ":" + rs.getString("grade");
                                 i++;
                                 if (i >= 15) break;
                             }

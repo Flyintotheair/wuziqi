@@ -21,30 +21,34 @@ public class UserActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String sql = "select * from user where username = 'root';";
-        try {
-            t = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    dbUtils = new DBUtils();
-                    rs = dbUtils.query(sql);
-                    try {
-                        if (rs.isBeforeFirst()) {
-                            rs.next();
-                            name = "名称：" + rs.getString("username");
-                            mima = "密码：" + rs.getString("password");
-                            rank = "分数：" + rs.getString("grade");
-                        }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            t.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        while (t.isAlive());
+        SaveSharedPreference saveSharedPreference = new SaveSharedPreference();
+//        String sql = "";
+//        try {
+//            t = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    dbUtils = new DBUtils();
+//                    rs = dbUtils.query(sql);
+//                    try {
+//                        if (rs.isBeforeFirst()) {
+//                            rs.next();
+//                            name = "名称：" + saveSharedPreference.getUsername();
+//                            mima = "密码：" + saveSharedPreference.getPassword();
+//                            rank = "分数：" + saveSharedPreference.getGrade();
+//                        }
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//            t.start();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        while (t.isAlive());
+        name = "名称：" + saveSharedPreference.getUsername();
+        mima = "密码：" + saveSharedPreference.getPassword();
+        rank = "分数：" + saveSharedPreference.getGrade();
         setContentView(R.layout.activity_user);
         username = (TextView) findViewById(R.id.name);
         password = (TextView) findViewById(R.id.password);
