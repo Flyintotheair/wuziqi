@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.mysql.jdbc.JDBC4ResultSet;
 import com.txxia.game.fivechess.game.Game;
 import com.txxia.game.fivechess.game.GameConstants;
 import com.txxia.game.fivechess.game.GameView;
@@ -24,9 +26,16 @@ import com.txxia.game.fivechess.game.Player;
 import com.txxia.game.fivechess.net.ConnectedService;
 import static com.txxia.game.fivechess.net.ConnectConstants.*;
 
+import java.sql.ResultSet;
+
 public class NetGameActivity extends Activity implements OnClickListener{
 
     private static final String TAG = "GameActivity";
+    private static final String win = "update user set grade = grade + 1 where username = '" + new SaveSharedPreference().getUsername() + "';";
+    private static final String lose = "update user set grade = case when grade = 0 then 0 else grade - 1 end\n" +
+            "where username = '" + new SaveSharedPreference().getUsername() + "';";
+    Thread t;
+    DBUtils dbUtils;
     
     GameView mGameView = null;
     
@@ -71,14 +80,41 @@ public class NetGameActivity extends Activity implements OnClickListener{
             switch (msg.what) {
             case GameConstants.GAME_OVER:
                 if (msg.arg1 == me.getType()){
-                    showWinDialog("恭喜你！你赢了！");
+                    showWinDialog("恭喜你！你赢了！加1分");
                     me.win();
+                    try {
+                        t = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dbUtils = new DBUtils();
+                                dbUtils.update(win);
+                            }
+                        });
+                        t.start();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    while (t.isAlive()) ;
                 } else if (msg.arg1 == challenger.getType()) {
-                    showWinDialog("很遗憾！你输了！");
+                    showWinDialog("很遗憾！你输了！减1分");
                     challenger.win();
+                    try {
+                        t = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dbUtils = new DBUtils();
+                                dbUtils.update(lose);
+                            }
+                        });
+                        t.start();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    while (t.isAlive()) ;
                 } else {
                     Log.d(TAG, "type="+msg.arg1);
                 }
+
                 updateScore(me, challenger);
                 break;
             case GameConstants.ADD_CHESS:
