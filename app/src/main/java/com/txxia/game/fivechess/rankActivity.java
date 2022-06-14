@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class rankActivity extends Activity {
@@ -17,7 +18,7 @@ public class rankActivity extends Activity {
     private Thread t;
     private DBUtils dbUtils;
     private ResultSet rs;
-    String[] worldgrade = new String[15];
+    ArrayList<String> worldgrade = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class rankActivity extends Activity {
                         if (rs.isBeforeFirst()) {
                             int i = 0;
                             while (rs.next()) {
-                                worldgrade[i] = (i + 1) + "       " + rs.getString("username") + ":" + rs.getString("grade");
+                                worldgrade.add((i + 1) + "       " + rs.getString("username") + ":" + rs.getString("grade"));
                                 i++;
                                 if (i >= 15) break;
                             }
